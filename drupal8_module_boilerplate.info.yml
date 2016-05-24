@@ -1,0 +1,6 @@
+name: Drupal 8 Module Boilerplate
+description: This is a boilerplate for a custom Drupal 8 module
+package: Custom
+
+type: module
+core: 8.x
