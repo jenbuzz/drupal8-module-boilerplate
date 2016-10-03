@@ -1,0 +1,4 @@
+drupal8-module-boilerplate-css:
+  css:
+    theme:
+      css/drupal8-module-boilerplate.css: {}
