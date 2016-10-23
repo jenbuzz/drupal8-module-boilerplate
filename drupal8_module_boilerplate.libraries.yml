@@ -1,4 +1,6 @@
-drupal8-module-boilerplate-css:
+drupal8-module-boilerplate-css-and-js:
   css:
     theme:
       css/drupal8-module-boilerplate.css: {}
+  js:
+    js/drupal8-module-boilerplate.js: {}

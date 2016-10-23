@@ -1,3 +1,5 @@
 <?php
 
-
+function drupal8_module_boilerplate_page_attachments(&$page) {
+    $page['#attached']['library'][] = 'drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js';
+}
