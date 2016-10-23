@@ -1,6 +1,6 @@
 drupal8-module-boilerplate-css-and-js:
   css:
     theme:
-      css/drupal8-module-boilerplate.css: {}
+      css/drupal8_module_boilerplate.css: {}
   js:
-    js/drupal8-module-boilerplate.js: {}
+    js/drupal8_module_boilerplate.js: {}
