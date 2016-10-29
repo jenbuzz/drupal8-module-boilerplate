@@ -2,6 +2,7 @@ drupal8-module-boilerplate-css-and-js:
   css:
     theme:
       css/drupal8_module_boilerplate.css: {}
+      css/print.css: { media: print }
   js:
     js/drupal8_module_boilerplate.js: {}
   dependencies:
