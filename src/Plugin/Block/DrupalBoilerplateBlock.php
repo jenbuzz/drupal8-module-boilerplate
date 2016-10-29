@@ -15,13 +15,13 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class DrupalBoilerplateBlock extends BlockBase {
 
-    /**
-     * {@inheritdoc}
-     */
-    public function build() {
-      return array(
-        '#theme' => 'drupalboilerplate-block',
-      );
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    return array(
+      '#theme' => 'drupalboilerplate-block',
+    );
+  }
 
 }
