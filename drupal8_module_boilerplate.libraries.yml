@@ -4,3 +4,5 @@ drupal8-module-boilerplate-css-and-js:
       css/drupal8_module_boilerplate.css: {}
   js:
     js/drupal8_module_boilerplate.js: {}
+  dependencies:
+    - core/jquery
