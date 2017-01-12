@@ -1,0 +1,7 @@
+drupal_boilerplate_page.content:
+  path: '/page'
+  defaults:
+    _controller: '\Drupal\drupal8_module_boilerplate\Controller\DrupalBoilerplatePageController::content'
+    _title: 'Page'
+  requirements:
+    _permission: 'access content'

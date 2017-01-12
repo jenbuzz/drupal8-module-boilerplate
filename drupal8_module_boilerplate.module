@@ -8,6 +8,9 @@ function drupal8_module_boilerplate_theme($existing, $type, $theme, $path) {
   return array(
     'drupalboilerplate-block' => array(
       'variables' => array(),
+    ),
+    'drupalboilerplate-page' => array(
+      'variables' => array(),
     )
   );
 }
