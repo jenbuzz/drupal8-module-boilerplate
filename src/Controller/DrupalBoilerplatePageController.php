@@ -9,6 +9,11 @@ class DrupalBoilerplatePageController extends ControllerBase {
     public function content() {
         return array(
             '#theme' => 'drupalboilerplate-page',
+
+            // Disabling cache for this page
+            '#cache' => [
+                'max-age' => 0,
+            ],
         );
     }
 
