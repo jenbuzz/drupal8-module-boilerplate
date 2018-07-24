@@ -1,18 +1,18 @@
 <?php
 
 function drupal8_module_boilerplate_page_attachments(&$page) {
-  $page['#attached']['library'][] = 'drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js';
+    $page['#attached']['library'][] = 'drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js';
 }
 
 function drupal8_module_boilerplate_theme($existing, $type, $theme, $path) {
-  return array(
-    'drupalboilerplate-block' => array(
-      'variables' => array(),
-    ),
-    'drupalboilerplate-page' => array(
-      'variables' => array(),
-    )
-  );
+    return array(
+        'drupalboilerplate-block' => array(
+            'variables' => array(),
+        ),
+        'drupalboilerplate-page' => array(
+            'variables' => array(),
+        )
+    );
 }
 
 // Setup custom 404!
