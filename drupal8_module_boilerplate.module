@@ -34,3 +34,19 @@ function drupal8_module_boilerplate_theme_suggestions_page(array $variables) {
 
     return $suggestions;
 }
+
+// Create images based on image specific image style on upload:
+function drupal8_module_boilerplate_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  error_log('updating images');
+    generateImages($entity, 'large');
+    generateImages($entity, 'medium');
+    generateImages($entity, 'thumbnail');
+}
+function generateImages (Drupal\Core\Entity\EntityInterface $entity, $type = 'large') {
+    if ($entity Instanceof \Drupal\file\FileInterface && $entity->getFileUri()) {
+        $imageUri = $entity->getFileUri();
+        $style = \Drupal\image\Entity\ImageStyle::load($type);
+        $destination = $style->buildUri($imageUri);
+        $style->createDerivative($imageUri, $destination);
+    }
+}
