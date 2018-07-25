@@ -2,6 +2,8 @@
 
 function drupal8_module_boilerplate_page_attachments(&$page)
 {
+    // This could in most cases be added in template as well with:
+    // {{ attach_library('drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js') }}
     $page['#attached']['library'][] = 'drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js';
 }
 
