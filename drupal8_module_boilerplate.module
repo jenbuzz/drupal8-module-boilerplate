@@ -1,23 +1,26 @@
 <?php
 
-function drupal8_module_boilerplate_page_attachments(&$page) {
+function drupal8_module_boilerplate_page_attachments(&$page)
+{
     $page['#attached']['library'][] = 'drupal8_module_boilerplate/drupal8-module-boilerplate-css-and-js';
 }
 
-function drupal8_module_boilerplate_theme($existing, $type, $theme, $path) {
-    return array(
+function drupal8_module_boilerplate_theme($existing, $type, $theme, $path)
+{
+    return [
         'drupalboilerplate-block' => array(
             'variables' => array(),
         ),
         'drupalboilerplate-page' => array(
             'variables' => array(),
         )
-    );
+    ];
 }
 
 // Setup custom 404!
 // -> add file "page--404.html.twig" to theme template folder
-function drupal8_module_boilerplate_theme_suggestions_page(array $variables) {
+function drupal8_module_boilerplate_theme_suggestions_page(array $variables)
+{
     $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
 
     $suggestions = theme_get_suggestions($path_args, 'page');
@@ -36,13 +39,14 @@ function drupal8_module_boilerplate_theme_suggestions_page(array $variables) {
 }
 
 // Create images based on image specific image style on upload:
-function drupal8_module_boilerplate_insert(Drupal\Core\Entity\EntityInterface $entity) {
-  error_log('updating images');
+function drupal8_module_boilerplate_insert(Drupal\Core\Entity\EntityInterface $entity)
+{
     generateImages($entity, 'large');
     generateImages($entity, 'medium');
     generateImages($entity, 'thumbnail');
 }
-function generateImages (Drupal\Core\Entity\EntityInterface $entity, $type = 'large') {
+function generateImages (Drupal\Core\Entity\EntityInterface $entity, $type = 'large')
+{
     if ($entity Instanceof \Drupal\file\FileInterface && $entity->getFileUri()) {
         $imageUri = $entity->getFileUri();
         $style = \Drupal\image\Entity\ImageStyle::load($type);

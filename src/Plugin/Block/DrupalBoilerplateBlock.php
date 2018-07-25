@@ -13,15 +13,15 @@ use Drupal\Core\Form\FormStateInterface;
  *   admin_label = @Translation("Drupal boilerplate block"),
  * )
  */
-class DrupalBoilerplateBlock extends BlockBase {
-
+class DrupalBoilerplateBlock extends BlockBase
+{
     /**
      * {@inheritdoc}
      */
-    public function build() {
-        return array(
+    public function build()
+    {
+        return [
             '#theme' => 'drupalboilerplate-block',
-        );
+        ];
     }
-
 }
