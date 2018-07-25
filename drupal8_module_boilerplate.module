@@ -10,12 +10,12 @@ function drupal8_module_boilerplate_page_attachments(&$page)
 function drupal8_module_boilerplate_theme($existing, $type, $theme, $path)
 {
     return [
-        'drupalboilerplate-block' => array(
-            'variables' => array(),
-        ),
-        'drupalboilerplate-page' => array(
-            'variables' => array(),
-        )
+        'drupalboilerplate-block' => [
+            'variables' => [],
+        ],
+        'drupalboilerplate-page' => [
+            'variables' => [],
+        ],
     ];
 }
 

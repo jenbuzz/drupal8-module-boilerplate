@@ -10,11 +10,13 @@ class NewUserLoginForm extends UserLoginForm
     public function validateFinal(array &$form, FormStateInterface $form_state)
     {
         $flood_config = $this->config('user.flood');
+        $flood_control_user_identifier = $form_state->get('flood_control_user_identifier');
 
         if (!$form_state->get('uid')) {
             $this->flood->register('user.failed_login_ip', $flood_config->get('ip_window'));
 
-            if ($flood_control_user_identifier = $form_state->get('flood_control_user_identifier')) {
+            $flood_control_user_identifier = $form_state->get('flood_control_user_identifier');
+            if ($flood_control_user_identifier) {
                 $this->flood->register(
                     'user.failed_login_user',
                     $flood_config->get('user_window'),
@@ -22,7 +24,8 @@ class NewUserLoginForm extends UserLoginForm
                 );
             }
 
-            if ($flood_control_triggered = $form_state->get('flood_control_triggered')) {
+            $flood_control_triggered = $form_state->get('flood_control_triggered');
+            if ($flood_control_triggered) {
                 if ($flood_control_triggered == 'user') {
                     $form_state->setErrorByName('name', 'Login Error!');
                 } else {
@@ -51,7 +54,7 @@ class NewUserLoginForm extends UserLoginForm
                     ]);
                 }
             }
-        } elseif ($flood_control_user_identifier = $form_state->get('flood_control_user_identifier')) {
+        } elseif ($flood_control_user_identifier) {
             $this->flood->clear('user.failed_login_user', $flood_control_user_identifier);
         }
     }

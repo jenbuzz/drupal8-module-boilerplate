@@ -12,7 +12,8 @@ class RouteSubscriber extends RouteSubscriberBase
      */
     protected function alterRoutes(RouteCollection $collection)
     {
-        if ($route = $collection->get('user.login')) {
+        $route = $collection->get('user.login');
+        if ($route) {
             $route->setDefault('_form', '\Drupal\drupal8_module_boilerplate\Form\NewUserLoginForm');
         }
     }
