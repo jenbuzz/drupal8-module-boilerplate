@@ -1,5 +1,9 @@
 # Drupal 8 Module Boilerplate
 
+**Create a custom block with configuration**
+* src/Plugin/Block/DrupalBoilerplateBlock.php
+* templates/drupalboilerplate-block.html.twig
+
 **Create a custom page with routing**
 * drupal8_module_boilerplate.routing.yml
 * drupal8_module_boilerplate_theme(...) in drupal8_module_boilerplate.module
