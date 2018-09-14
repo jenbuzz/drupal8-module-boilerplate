@@ -20,8 +20,36 @@ class DrupalBoilerplateBlock extends BlockBase
      */
     public function build()
     {
+        $config = $this->getConfiguration();
+
         return [
             '#theme' => 'drupalboilerplate-block',
+            '#configtitle' => !empty($config['drupal_boilerplate_title']) ?
+                $config['drupal_boilerplate_title'] : '',
         ];
+    }
+
+    public function blockForm($form, FormStateInterface $form_state)
+    {
+        $form = parent::blockForm($form, $form_state);
+    
+        $config = $this->getConfiguration();
+    
+        $form['drupal_boilerplate_title'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Title'),
+          '#default_value' => isset($config['drupal_boilerplate_title']) ? $config['drupal_boilerplate_title'] : '',
+        ];
+    
+        return $form;
+    }
+    
+    public function blockSubmit($form, FormStateInterface $form_state)
+    {
+        parent::blockSubmit($form, $form_state);
+    
+        $values = $form_state->getValues();
+    
+        $this->configuration['drupal_boilerplate_title'] = $values['drupal_boilerplate_title'];
     }
 }

@@ -11,7 +11,9 @@ function drupal8_module_boilerplate_theme($existing, $type, $theme, $path)
 {
     return [
         'drupalboilerplate-block' => [
-            'variables' => [],
+            'variables' => [
+                'configtitle' => '',
+            ],
         ],
         'drupalboilerplate-page' => [
             'variables' => [],
