@@ -1,8 +1,14 @@
-(function($) {
-    $(document).ready(function() {
+(function ($, Drupal) {
+    'use strict';
 
-        // js code goes here!
+    Drupal.behaviors.drupalBoilerplate = {
+        attach: function (context, settings) {            
+            $('#block-drupalboilerplateblock', context).once('blockBehavior').addClass('bg-black');
 
-    });
-})(jQuery);
-
+            $('#block-drupalboilerplateblock', context).once('anotherBlockBehavior').each(function () {
+                console.log('Hello World!');
+            });
+        }
+    };
+})(jQuery, Drupal);
+ 
